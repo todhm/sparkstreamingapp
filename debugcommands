@@ -1,0 +1,3 @@
+docker-compose exec kafka kafka-console-consumer --topic kafkapython.kafka_server.sfcrime --bootstrap-server PLAINTEXT://localhost:9092 --from-beginning
+docker-compose exec spark spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.4 --master spark://spark-master:7077 --deploy-mode client --driver-memory 4g --executor-memory 4g --executor-cores 1 data_stream.py
+docker-compose exec kafkapython python kafka_server.py
